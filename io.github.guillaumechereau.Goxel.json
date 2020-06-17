@@ -1,7 +1,7 @@
 {
   "id": "io.github.guillaumechereau.Goxel",
   "runtime": "org.freedesktop.Platform",
-  "runtime-version": "18.08",
+  "runtime-version": "19.08",
   "sdk": "org.freedesktop.Sdk",
   "command": "goxel",
   "rename-desktop-file": "goxel.desktop",
@@ -19,7 +19,8 @@
       "cleanup": [ "*" ],
       "buildsystem": "simple",
       "build-commands": [
-        "python setup.py install --prefix=/app"
+        "python3 setup.py install --prefix=/app",
+        "sed -i '1 s/python/python3/' /app/bin/scons"
       ],
       "sources": [
         {
