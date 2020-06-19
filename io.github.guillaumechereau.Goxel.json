@@ -61,6 +61,11 @@
           "type": "archive",
           "url": "https://github.com/guillaumechereau/goxel/archive/v0.10.6.tar.gz",
           "sha256": "af57197910788131441a537cc658a3397448d90552a0fd3bfe9992635e9d64d8"
+        },
+        {
+          "type": "file",
+          "path": "io.github.guillaumechereau.Goxel.appdata.xml",
+          "dest-filename": "snap/gui/io.github.guillaumechereau.Goxel.appdata.xml"
         }
       ]
     }
