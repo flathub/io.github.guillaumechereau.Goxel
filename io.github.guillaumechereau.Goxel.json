@@ -5,6 +5,7 @@
   "sdk": "org.freedesktop.Sdk",
   "command": "goxel",
   "rename-icon": "goxel",
+  "rename-desktop-file": "goxel.desktop",
   "finish-args": [
     "--socket=wayland",
     "--socket=x11",
@@ -55,7 +56,6 @@
       "no-autogen": true,
       "make-args": ["release"],
       "make-install-args": ["PREFIX=/app"],
-      "post-install": ["cp -r ${FLATPAK_DEST}/share/applications/goxel.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"],
       "sources": [
         {
           "type": "archive",
@@ -65,7 +65,8 @@
         {
           "type": "file",
           "path": "io.github.guillaumechereau.Goxel.appdata.xml",
-          "dest-filename": "snap/gui/io.github.guillaumechereau.Goxel.appdata.xml"
+          "dest": "snap/gui/",
+          "dest-filename": "io.github.guillaumechereau.Goxel.appdata.xml"
         }
       ]
     }
