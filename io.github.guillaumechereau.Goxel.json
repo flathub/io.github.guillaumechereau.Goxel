@@ -4,7 +4,6 @@
   "runtime-version": "20.08",
   "sdk": "org.freedesktop.Sdk",
   "command": "goxel",
-  "rename-desktop-file": "goxel.desktop",
   "rename-icon": "goxel",
   "finish-args": [
     "--socket=wayland",
@@ -56,6 +55,7 @@
       "no-autogen": true,
       "make-args": ["release"],
       "make-install-args": ["PREFIX=/app"],
+      "post-install": ["cp -r ${FLATPAK_DEST}/share/applications/goxel.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"],
       "sources": [
         {
           "type": "archive",
