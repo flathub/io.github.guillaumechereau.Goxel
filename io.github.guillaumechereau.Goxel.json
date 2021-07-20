@@ -1,11 +1,11 @@
 {
   "id": "io.github.guillaumechereau.Goxel",
   "runtime": "org.freedesktop.Platform",
-  "runtime-version": "19.08",
+  "runtime-version": "20.08",
   "sdk": "org.freedesktop.Sdk",
   "command": "goxel",
-  "rename-desktop-file": "goxel.desktop",
   "rename-icon": "goxel",
+  "rename-desktop-file": "goxel.desktop",
   "finish-args": [
     "--socket=wayland",
     "--socket=x11",
@@ -42,8 +42,8 @@
         "sources": [
             {
                 "type": "archive",
-                "url": "https://github.com/glfw/glfw/releases/download/3.3.2/glfw-3.3.2.zip",
-                "sha256": "08a33a512f29d7dbf78eab39bd7858576adcc95228c9efe8e4bc5f0f3261efc7"
+                "url": "https://github.com/glfw/glfw/releases/download/3.3.4/glfw-3.3.4.zip",
+                "sha256": "bbd2c42c660b725e9755eb417e40b373f0d4c03138c9b2e210d02cd308bd99cd"
             }
         ],
         "cleanup": [
@@ -59,13 +59,14 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/guillaumechereau/goxel/archive/v0.10.6.tar.gz",
-          "sha256": "af57197910788131441a537cc658a3397448d90552a0fd3bfe9992635e9d64d8"
+          "url": "https://github.com/guillaumechereau/goxel/archive/v0.10.7.tar.gz",
+          "sha256": "dfb91e62bdd5332e3938923db924bae43f12eaa181040d16e4cc7082316adf1c"
         },
         {
           "type": "file",
           "path": "io.github.guillaumechereau.Goxel.appdata.xml",
-          "dest-filename": "snap/gui/io.github.guillaumechereau.Goxel.appdata.xml"
+          "dest": "snap/gui/",
+          "dest-filename": "io.github.guillaumechereau.Goxel.appdata.xml"
         }
       ]
     }
