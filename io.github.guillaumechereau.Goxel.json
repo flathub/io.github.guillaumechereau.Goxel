@@ -1,89 +1,99 @@
 {
-  "id": "io.github.guillaumechereau.Goxel",
-  "runtime": "org.freedesktop.Platform",
-  "runtime-version": "20.08",
-  "sdk": "org.freedesktop.Sdk",
-  "command": "goxel",
-  "rename-icon": "goxel",
-  "rename-desktop-file": "goxel.desktop",
-  "finish-args": [
-    "--socket=wayland",
-    "--socket=x11",
-    "--share=ipc",
-    "--device=dri",
-    "--filesystem=host"
-  ],
-  "cleanup": [ "/lib/cmake" ],
-  "modules": [
-    {
-      "name": "scons",
-      "cleanup": [ "*" ],
-      "buildsystem": "simple",
-      "build-commands": [
-        "python3 setup.py install --prefix=/app",
-        "sed -i '1 s/python/python3/' /app/bin/scons"
-      ],
-      "sources": [
+    "id": "io.github.guillaumechereau.Goxel",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "22.08",
+    "sdk": "org.freedesktop.Sdk",
+    "command": "goxel",
+    "rename-icon": "goxel",
+    "rename-desktop-file": "goxel.desktop",
+    "finish-args": [
+        "--socket=wayland",
+        "--socket=x11",
+        "--share=ipc",
+        "--device=dri",
+        "--filesystem=host"
+    ],
+    "cleanup": [
+        "/lib/cmake"
+    ],
+    "modules": [
         {
-          "type": "archive",
-          "url": "http://prdownloads.sourceforge.net/scons/scons-3.1.2.tar.gz",
-          "sha256": "7801f3f62f654528e272df780be10c0e9337e897650b62ddcee9f39fde13f8fb",
-          "x-checker-data": {
-              "type": "anitya",
-              "project-id": 4770,
-              "url-template": "http://prdownloads.sourceforge.net/scons/scons-$version.tar.gz"
-        }
-        }
-      ]
-    },
-    {
-        "name": "glfw",
-        "buildsystem": "cmake-ninja",
-        "builddir": true,
-        "config-opts": [
-            "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
-            "-DBUILD_SHARED_LIBS:BOOL=ON"
-        ],
-        "sources": [
-            {
-                "type": "archive",
-                "url": "https://github.com/glfw/glfw/releases/download/3.3.4/glfw-3.3.4.zip",
-                "sha256": "bbd2c42c660b725e9755eb417e40b373f0d4c03138c9b2e210d02cd308bd99cd",
-                "x-checker-data": {
-                    "type": "anitya",
-                    "project-id": 1180,
-                    "url-template": "https://github.com/glfw/glfw/releases/download/$version/glfw-$version.zip"
-            }
-            }
-        ],
-        "cleanup": [
-            "/include",
-            "/lib/pkgconfig"
-        ]
-    },
-    {
-      "name": "goxel",
-      "no-autogen": true,
-      "make-args": ["release"],
-      "make-install-args": ["PREFIX=/app"],
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://github.com/guillaumechereau/goxel/archive/v0.10.8.tar.gz",
-          "sha256": "98def0a77e90306023951b8171bf93458ef58663f1eca71201ed93b8fcdf332a",
-          "x-checker-data": {
-              "type": "anitya",
-              "project-id": 12163,
-              "url-template": "https://github.com/guillaumechereau/goxel/archive/v$version.tar.gz"
-        }
+            "name": "scons",
+            "cleanup": [
+                "*"
+            ],
+            "buildsystem": "simple",
+            "build-commands": [
+                "python -mpip install . --no-index --find-links=file://${PWD} --prefix=${FLATPAK_DEST} --no-build-isolation",
+                "sed -i '1 s/python/python3/' /app/bin/scons"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://sourceforge.net/projects/scons/files/scons/4.4.0/SCons-4.4.0.tar.gz",
+                    "sha256": "3d43b2303a924816ea0e1b345ff04c9b3e27b53eadf0f26012fc0c29b019685f",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 4770,
+                        "url-template": "https://sourceforge.net/projects/scons/files/scons/$version/SCons-$version.tar.gz"
+                    }
+                }
+            ]
         },
         {
-          "type": "file",
-          "path": "io.github.guillaumechereau.Goxel.appdata.xml",
-          "dest": "snap/gui/",
-          "dest-filename": "io.github.guillaumechereau.Goxel.appdata.xml"
+            "name": "glfw",
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+                "-DGLFW_BUILD_DOCS=OFF",
+                "-DBUILD_SHARED_LIBS:BOOL=ON"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/glfw/glfw/releases/download/3.3.8/glfw-3.3.8.zip",
+                    "sha256": "4d025083cc4a3dd1f91ab9b9ba4f5807193823e565a5bcf4be202669d9911ea6",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 1180,
+                        "url-template": "https://github.com/glfw/glfw/releases/download/$version/glfw-$version.zip"
+                    }
+                }
+            ],
+            "cleanup": [
+                "/include",
+                "/lib/pkgconfig"
+            ]
+        },
+        {
+            "name": "goxel",
+            "no-autogen": true,
+            "make-args": [
+                "release",
+                "CFLAGS=-Wno-error=format-truncation"
+            ],
+            "make-install-args": [
+                "PREFIX=/app"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/guillaumechereau/goxel/archive/v0.11.0.tar.gz",
+                    "sha256": "660030e1b3b33a3e909d8189780a192cba059774af57b042ecb63297f2a6d0fc",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 12163,
+                        "url-template": "https://github.com/guillaumechereau/goxel/archive/v$version.tar.gz"
+                    }
+                },
+                {
+                    "type": "file",
+                    "path": "io.github.guillaumechereau.Goxel.appdata.xml",
+                    "dest": "snap/gui/",
+                    "dest-filename": "io.github.guillaumechereau.Goxel.appdata.xml"
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }
