@@ -79,8 +79,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/guillaumechereau/goxel/archive/v0.13.0.tar.gz",
-                    "sha256": "33f92578bbd53c426ab577411aeba971f5164a0b7853ace1bad60386ebbb589e",
+                    "url": "https://github.com/guillaumechereau/goxel/archive/v0.14.0.tar.gz",
+                    "sha256": "f22aef2cd520f0a13a6fb08c63c6c0f8abc9c9814b6e9ce8978fc834a1824696",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 12163,
