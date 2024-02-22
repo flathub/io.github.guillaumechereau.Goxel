@@ -52,8 +52,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/glfw/glfw/releases/download/3.3.9/glfw-3.3.9.zip",
-                    "sha256": "55261410f8c3a9cc47ce8303468a90f40a653cd8f25fb968b12440624fb26d08",
+                    "url": "https://github.com/glfw/glfw/releases/download/3.3.10/glfw-3.3.10.zip",
+                    "sha256": "e8433ef817f7b8199aab4868390639701b6b26f535ec1a6598bcf82019d1bdb8",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 1180,
