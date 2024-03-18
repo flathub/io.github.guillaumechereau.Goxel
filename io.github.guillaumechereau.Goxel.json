@@ -30,8 +30,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://sourceforge.net/projects/scons/files/scons/4.6.0/SCons-4.6.0.tar.gz",
-                    "sha256": "7db28958b188b800f803c287d0680cc3ac7c422ed0b1cf9895042c52567803ec",
+                    "url": "https://sourceforge.net/projects/scons/files/scons/4.7.0/SCons-4.7.0.tar.gz",
+                    "sha256": "d9fcd831700ce373ecd30ac55e9d7eff20754215cff5967c4972237d614a326e",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 4770,
