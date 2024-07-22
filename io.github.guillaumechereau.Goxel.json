@@ -30,8 +30,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://sourceforge.net/projects/scons/files/scons/4.7.0/SCons-4.7.0.tar.gz",
-                    "sha256": "d9fcd831700ce373ecd30ac55e9d7eff20754215cff5967c4972237d614a326e",
+                    "url": "https://sourceforge.net/projects/scons/files/scons/4.8.0/SCons-4.8.0.tar.gz",
+                    "sha256": "6e928fc97984e719814270f6863f2183b3b72180b0162a5ed09db68c9994100c",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 4770,
@@ -79,8 +79,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/guillaumechereau/goxel/archive/v0.14.0.tar.gz",
-                    "sha256": "f22aef2cd520f0a13a6fb08c63c6c0f8abc9c9814b6e9ce8978fc834a1824696",
+                    "url": "https://github.com/guillaumechereau/goxel/archive/v0.15.0.tar.gz",
+                    "sha256": "21dc40b9ea6255dfb5970f229c9be40ef46ba53fd9500dd0b5d18f9497fea84a",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 12163,
