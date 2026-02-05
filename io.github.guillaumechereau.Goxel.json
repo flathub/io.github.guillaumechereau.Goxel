@@ -1,7 +1,7 @@
 {
     "id": "io.github.guillaumechereau.Goxel",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "23.08",
+    "runtime-version": "25.08",
     "sdk": "org.freedesktop.Sdk",
     "command": "goxel",
     "rename-icon": "goxel",
@@ -71,7 +71,7 @@
             "no-autogen": true,
             "make-args": [
                 "release",
-                "CFLAGS=-Wno-error=format-truncation"
+                "CFLAGS=-Wno-error -Wno-stringop-overflow"
             ],
             "make-install-args": [
                 "PREFIX=/app"
