@@ -69,9 +69,11 @@
         {
             "name": "goxel",
             "no-autogen": true,
+            "build-options": {
+                "cflags": "-Wno-error -Wno-stringop-overflow"
+            },
             "make-args": [
-                "release",
-                "CFLAGS=-Wno-error -Wno-stringop-overflow"
+                "release"
             ],
             "make-install-args": [
                 "PREFIX=/app"
