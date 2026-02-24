@@ -19,10 +19,20 @@
 	</description>
 	<screenshots>
 		<screenshot type="default">
-			<image type="source">https://github.com/guillaumechereau/goxel/raw/b06a56c3c10fa54d5616367195251d84ff95124f/screenshots/screenshot-plane.png</image>
+			<image type="source">https://raw.githubusercontent.com/guillaumechereau/goxel/refs/tags/v0.15.1/screenshots/screenshot-castle.png?raw=true</image>
+		</screenshot>
+		<screenshot>
+			<image type="source">https://raw.githubusercontent.com/guillaumechereau/goxel/refs/tags/v0.15.1/screenshots/screenshot-dicom.png?raw=true</image>
+		</screenshot>
+		<screenshot>
+			<image type="source">https://raw.githubusercontent.com/guillaumechereau/goxel/refs/tags/v0.15.1/screenshots/screenshot-plane.png?raw=true</image>
+		</screenshot>
+		<screenshot>
+			<image type="source">https://raw.githubusercontent.com/guillaumechereau/goxel/refs/tags/v0.15.1/screenshots/screenshot-procedural-city.png?raw=true</image>
 		</screenshot>
 	</screenshots>
 	<releases>
+        <release version="0.15.1" date="2024-06-28"/>
         <release version="0.14.0" date="2024-02-02"/>
         <release version="0.13.0" date="2023-12-27"/>
         <release version="0.12.0" date="2023-04-02"/>
